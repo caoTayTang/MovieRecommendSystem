@@ -1,5 +1,8 @@
+*.tex
 *.zip
 *.md5
+
+TODO_IMAGES.md
 AGENTS.md
 spec.md
 
@@ -62,6 +65,20 @@ figures/
 *.svg
 *.jpg
 *.jpeg
+
+# LaTeX auxiliary files
+*.aux
+*.log
+*.toc
+*.bbl
+*.blg
+*.out
+*.synctex
+*.nav
+*.snm
+*.vrb
+*.fls
+*.fdb_latexmk
 
 # Build artifacts
 build/
