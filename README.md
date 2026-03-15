@@ -19,7 +19,7 @@
 | Genres | 18 |
 | Time Range | Apr 2000 - Feb 2003 |
 
-**Source:** [MovieLens 1M Dataset](https://grouplens.org/datasets/movielens/ml-1m/) by GroupLens Research
+**Source:** [MovieLens 1M Dataset](https://grouplens.org/datasets/movielens/1m/) by GroupLens Research
 
 ---
 
@@ -137,7 +137,6 @@ Action + Adventure → Thriller        (lift: 2.9)
 
 ## 📖 Documentation
 
-- **[AGENTS.md](AGENTS.md)** - Guidelines for AI agents working on this codebase
 - **[movielens_analysis.ipynb](movielens_analysis.ipynb)** - Main analysis notebook with:
   - Data loading & preprocessing
   - Exploratory Data Analysis
@@ -179,7 +178,7 @@ This project is for educational purposes as part of the Data Mining course assig
 
 ## 🔗 References
 
-1. [MovieLens Dataset](https://grouplens.org/datasets/movielens/ml-1m/)
+1. [MovieLens Dataset](https://grouplens.org/datasets/movielens/1m)
 2. [Harper, F. M., & Konstan, J. A. (2015)](https://dl.acm.org/doi/10.1145/2827872) - The MovieLens Datasets: History and Context
 3. [FP-Growth Algorithm](https://rasbt.github.io/mlxtend/api_reference/frequent_patterns/mlxtend.frequent_patterns.fpgrowth/)
 4. [Association Rules](https://rasbt.github.io/mlxtend/api_reference/frequent_patterns/mlxtend.frequent_patterns.association_rules/)
