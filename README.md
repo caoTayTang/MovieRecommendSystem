@@ -1,171 +1,189 @@
-SUMMARY
-================================================================================
+# MovieLens 1M Data Mining & Recommendation System
 
-These files contain 1,000,209 anonymous ratings of approximately 3,900 movies 
-made by 6,040 MovieLens users who joined MovieLens in 2000.
+[![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange.svg)](https://jupyter.org/)
+[![Pandas](https://img.shields.io/badge/Pandas-2.0+-green.svg)](https://pandas.pydata.org/)
+[![Plotly](https://img.shields.io/badge/Plotly-Interactive-red.svg)](https://plotly.com/)
+[![mlxtend](https://img.shields.io/badge/mlxtend-FP--Growth-purple.svg)](https://rasbt.github.io/mlxtend/)
+[![License](https://img.shields.io/badge/License-MovieLens-yellow.svg)](https://grouplens.org/)
 
-USAGE LICENSE
-================================================================================
+> Data mining course assignment analyzing the MovieLens 1M dataset with EDA, Association Rule Mining (Apriori/FP-Growth), and future implementations of Collaborative Filtering & Content-Based Filtering.
 
-Neither the University of Minnesota nor any of the researchers
-involved can guarantee the correctness of the data, its suitability
-for any particular purpose, or the validity of results based on the
-use of the data set.  The data set may be used for any research
-purposes under the following conditions:
+## 📊 Dataset Overview
 
-     * The user may not state or imply any endorsement from the
-       University of Minnesota or the GroupLens Research Group.
+| Metric | Value |
+|--------|-------|
+| Total Ratings | 1,000,209 |
+| Unique Users | 6,040 |
+| Unique Movies | 3,883 |
+| Genres | 18 |
+| Time Range | Apr 2000 - Feb 2003 |
 
-     * The user must acknowledge the use of the data set in
-       publications resulting from the use of the data set
-       (see below for citation information).
+**Source:** [MovieLens 1M Dataset](https://grouplens.org/datasets/movielens/ml-1m/) by GroupLens Research
 
-     * The user may not redistribute the data without separate
-       permission.
+---
 
-     * The user may not use this information for any commercial or
-       revenue-bearing purposes without first obtaining permission
-       from a faculty member of the GroupLens Research Project at the
-       University of Minnesota.
+## 🗂️ Project Structure
 
-If you have any further questions or comments, please contact GroupLens
-<grouplens-info@cs.umn.edu>. 
+```
+.
+├── README.md                    # This file
+├── requirements.txt             # Python dependencies
+├── movielens_analysis.ipynb     # Main analysis notebook
+├── ml-1m/                      # Dataset directory
+│   ├── ratings.dat
+│   ├── users.dat
+│   ├── movies.dat
+│   └── README
+└── .venv/                      # Virtual environment
+```
 
-CITATION
-================================================================================
+---
 
-To acknowledge use of the dataset in publications, please cite the following
-paper:
+## 🚀 Quick Start
 
-F. Maxwell Harper and Joseph A. Konstan. 2015. The MovieLens Datasets: History
-and Context. ACM Transactions on Interactive Intelligent Systems (TiiS) 5, 4,
-Article 19 (December 2015), 19 pages. DOI=http://dx.doi.org/10.1145/2827872
+### 1. Setup
 
-ACKNOWLEDGEMENTS
-================================================================================
+```bash
+# Navigate to project directory
+cd /path/to/project
 
-Thanks to Shyong Lam and Jon Herlocker for cleaning up and generating the data
-set.
+# Create virtual environment
+python3 -m venv .venv
 
-FURTHER INFORMATION ABOUT THE GROUPLENS RESEARCH PROJECT
-================================================================================
+# Activate virtual environment
+source .venv/bin/activate  # macOS/Linux
+# .venv\Scripts\activate   # Windows
 
-The GroupLens Research Project is a research group in the Department of 
-Computer Science and Engineering at the University of Minnesota. Members of 
-the GroupLens Research Project are involved in many research projects related 
-to the fields of information filtering, collaborative filtering, and 
-recommender systems. The project is lead by professors John Riedl and Joseph 
-Konstan. The project began to explore automated collaborative filtering in 
-1992, but is most well known for its world wide trial of an automated 
-collaborative filtering system for Usenet news in 1996. Since then the project 
-has expanded its scope to research overall information filtering solutions, 
-integrating in content-based methods as well as improving current collaborative 
-filtering technology.
+# Install dependencies
+pip install -r requirements.txt
+```
 
-Further information on the GroupLens Research project, including research 
-publications, can be found at the following web site:
-        
-        http://www.grouplens.org/
+### 2. Run the Notebook
 
-GroupLens Research currently operates a movie recommender based on 
-collaborative filtering:
+```bash
+# Start Jupyter Lab
+jupyter lab movielens_analysis.ipynb
 
-        http://www.movielens.org/
+# Or use Jupyter Notebook
+jupyter notebook movielens_analysis.ipynb
+```
 
-RATINGS FILE DESCRIPTION
-================================================================================
+---
 
-All ratings are contained in the file "ratings.dat" and are in the
-following format:
+## 📈 Features Implemented
 
-UserID::MovieID::Rating::Timestamp
+### ✅ Completed
 
-- UserIDs range between 1 and 6040 
-- MovieIDs range between 1 and 3952
-- Ratings are made on a 5-star scale (whole-star ratings only)
-- Timestamp is represented in seconds since the epoch as returned by time(2)
-- Each user has at least 20 ratings
+| Feature | Description |
+|---------|-------------|
+| **Data Preprocessing** | Load, clean, and merge MovieLens 1M datasets |
+| **EDA** | Rating distribution, user demographics, genre analysis |
+| **Apriori/FP-Growth** | Association rule mining for genre patterns |
+| **Movie-Based Rules** | Genre co-occurrence in movies (lift ~4.5) |
+| **User-Based Rules** | User preference patterns (for comparison) |
+| **Genre Recommender** | Simple content-based genre recommendation |
 
-USERS FILE DESCRIPTION
-================================================================================
+### 🔄 In Progress / Planned
 
-User information is in the file "users.dat" and is in the following
-format:
+| Feature | Status |
+|---------|--------|
+| **Collaborative Filtering** | User-based & Item-based CF |
+| **Content-Based Filtering** | Genre & metadata-based recommendations |
+| **Hybrid Recommender** | Combine CF + Content-Based |
+| **Model Evaluation** | RMSE, Precision@K, Recall@K |
 
-UserID::Gender::Age::Occupation::Zip-code
+---
 
-All demographic information is provided voluntarily by the users and is
-not checked for accuracy.  Only users who have provided some demographic
-information are included in this data set.
+## 📊 Key Findings
 
-- Gender is denoted by a "M" for male and "F" for female
-- Age is chosen from the following ranges:
+### Association Rules Results
 
-	*  1:  "Under 18"
-	* 18:  "18-24"
-	* 25:  "25-34"
-	* 35:  "35-44"
-	* 45:  "45-49"
-	* 50:  "50-55"
-	* 56:  "56+"
+| Approach | Avg Lift | Interpretation |
+|----------|----------|----------------|
+| User-Based | ~1.0 | Trivial rules (base rates) |
+| **Movie-Based** | **~4.5** | **Strong genre associations** |
 
-- Occupation is chosen from the following choices:
+### Top Genre Association Rules
 
-	*  0:  "other" or not specified
-	*  1:  "academic/educator"
-	*  2:  "artist"
-	*  3:  "clerical/admin"
-	*  4:  "college/grad student"
-	*  5:  "customer service"
-	*  6:  "doctor/health care"
-	*  7:  "executive/managerial"
-	*  8:  "farmer"
-	*  9:  "homemaker"
-	* 10:  "K-12 student"
-	* 11:  "lawyer"
-	* 12:  "programmer"
-	* 13:  "retired"
-	* 14:  "sales/marketing"
-	* 15:  "scientist"
-	* 16:  "self-employed"
-	* 17:  "technician/engineer"
-	* 18:  "tradesman/craftsman"
-	* 19:  "unemployed"
-	* 20:  "writer"
+```
+Animation          → Children's      (lift: 6.2)
+Adventure + Fantasy → Action         (lift: 4.1)  
+Romance            → Drama            (lift: 3.8)
+Crime + Drama      → Thriller         (lift: 3.2)
+Action + Adventure → Thriller        (lift: 2.9)
+```
 
-MOVIES FILE DESCRIPTION
-================================================================================
+### EDA Insights
 
-Movie information is in the file "movies.dat" and is in the following
-format:
+- **Rating Distribution:** 52% are 4-5 stars (positive skew)
+- **User Demographics:** 71% male, 25-34 largest age group
+- **Top Genres:** Drama (55%), Comedy (35%), Action (24%)
+- **Highest Rated:** Film-Noir, Documentary (niche appeal)
 
-MovieID::Title::Genres
+---
 
-- Titles are identical to titles provided by the IMDB (including
-year of release)
-- Genres are pipe-separated and are selected from the following genres:
+## 🛠️ Tech Stack
 
-	* Action
-	* Adventure
-	* Animation
-	* Children's
-	* Comedy
-	* Crime
-	* Documentary
-	* Drama
-	* Fantasy
-	* Film-Noir
-	* Horror
-	* Musical
-	* Mystery
-	* Romance
-	* Sci-Fi
-	* Thriller
-	* War
-	* Western
+| Category | Tools |
+|----------|-------|
+| Language | Python 3.11+ |
+| Data Processing | pandas, numpy |
+| Visualization | Plotly, Seaborn |
+| Mining | mlxtend (FP-Growth, Apriori) |
+| Development | Jupyter Notebook |
 
-- Some MovieIDs do not correspond to a movie due to accidental duplicate
-entries and/or test entries
-- Movies are mostly entered by hand, so errors and inconsistencies may exist
+---
 
-# MovieRecommendSystem
+## 📖 Documentation
+
+- **[AGENTS.md](AGENTS.md)** - Guidelines for AI agents working on this codebase
+- **[movielens_analysis.ipynb](movielens_analysis.ipynb)** - Main analysis notebook with:
+  - Data loading & preprocessing
+  - Exploratory Data Analysis
+  - User-Based vs Movie-Based Apriori comparison
+  - Genre recommendation system
+
+---
+
+## 📝 Assignment Requirements
+
+This project fulfills the following course requirements:
+
+- [x] Data preprocessing & cleaning
+- [x] Exploratory Data Analysis (EDA)
+- [x] Data mining algorithm implementation
+- [ ] Collaborative Filtering *(planned)*
+- [ ] Content-Based Filtering *(planned)*
+- [x] Visualization of results
+- [x] Decision making & conclusions
+
+---
+
+## 📜 License
+
+This dataset is provided by [GroupLens Research](https://grouplens.org/) under their usage terms. See `ml-1m/README` for details.
+
+This project is for educational purposes as part of the Data Mining course assignment.
+
+---
+
+## 👥 Contributors
+
+| Role | Description |
+|------|-------------|
+| Data Mining Course | Assignment |
+| Dataset | MovieLens 1M by GroupLens |
+
+---
+
+## 🔗 References
+
+1. [MovieLens Dataset](https://grouplens.org/datasets/movielens/ml-1m/)
+2. [Harper, F. M., & Konstan, J. A. (2015)](https://dl.acm.org/doi/10.1145/2827872) - The MovieLens Datasets: History and Context
+3. [FP-Growth Algorithm](https://rasbt.github.io/mlxtend/api_reference/frequent_patterns/mlxtend.frequent_patterns.fpgrowth/)
+4. [Association Rules](https://rasbt.github.io/mlxtend/api_reference/frequent_patterns/mlxtend.frequent_patterns.association_rules/)
+
+---
+
+*Last Updated: March 2026*
