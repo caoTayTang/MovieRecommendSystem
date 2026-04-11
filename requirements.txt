@@ -1,6 +1,8 @@
 pandas
 numpy
 plotly
+scikit-learn
+scipy
 mlxtend
 seaborn
 networkx
