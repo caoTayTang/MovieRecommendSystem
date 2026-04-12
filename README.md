@@ -21,6 +21,14 @@
 
 **Source:** [MovieLens 1M Dataset](https://grouplens.org/datasets/movielens/1m/) by GroupLens Research
 
+## 📚 Project Notebooks
+
+| Phần | Nội dung | Người thực hiện | Colab |
+|------|----------|----------------|-------|
+| 🧠 **Part 1** | EDA + Apriori | **Lê Chí Đại** | [![Open in Colab](https://img.shields.io/badge/Colab-Open-orange?logo=googlecolab)](https://colab.research.google.com/drive/1EXQfRIjImTzHXtLIBKAWVd4RTO_6TCMm#scrollTo=bKX6njM94V-Q) |
+| 🤝 **Part 2** | Collaborative Filtering (User-based, Item-based) | **Lương Minh Thuận** | [![Open in Colab](https://img.shields.io/badge/Colab-Open-orange?logo=googlecolab)](https://colab.research.google.com/drive/186mV-rzJzykv6N9NI9gGj3Q9s0XEpxyB) |
+| 🎯 **Part 3** | Content-Based Filtering | **Nguyễn Quốc Huy** | [![Open in Colab](https://img.shields.io/badge/Colab-Open-orange?logo=googlecolab)](https://colab.research.google.com/drive/1oS8C_EHvhNbWyd49yC3RFRIaaP0EtUzC) |
+
 ---
 
 ## 🗂️ Project Structure
@@ -44,6 +52,9 @@
 
 ### 1. Setup
 
+Recommend way is to using Google Colab attach at the beginning.
+
+Or:
 ```bash
 # Navigate to project directory
 cd /path/to/project
@@ -71,58 +82,6 @@ jupyter notebook movielens_analysis.ipynb
 
 ---
 
-## 📈 Features Implemented
-
-### ✅ Completed
-
-| Feature | Description |
-|---------|-------------|
-| **Data Preprocessing** | Load, clean, and merge MovieLens 1M datasets |
-| **EDA** | Rating distribution, user demographics, genre analysis |
-| **Apriori/FP-Growth** | Association rule mining for genre patterns |
-| **Movie-Based Rules** | Genre co-occurrence in movies (lift ~4.5) |
-| **User-Based Rules** | User preference patterns (for comparison) |
-| **Genre Recommender** | Simple content-based genre recommendation |
-
-### 🔄 In Progress / Planned
-
-| Feature | Status |
-|---------|--------|
-| **Collaborative Filtering** | User-based & Item-based CF |
-| **Content-Based Filtering** | Genre & metadata-based recommendations |
-| **Hybrid Recommender** | Combine CF + Content-Based |
-| **Model Evaluation** | RMSE, Precision@K, Recall@K |
-
----
-
-## 📊 Key Findings
-
-### Association Rules Results
-
-| Approach | Avg Lift | Interpretation |
-|----------|----------|----------------|
-| User-Based | ~1.0 | Trivial rules (base rates) |
-| **Movie-Based** | **~4.5** | **Strong genre associations** |
-
-### Top Genre Association Rules
-
-```
-Animation          → Children's      (lift: 6.2)
-Adventure + Fantasy → Action         (lift: 4.1)  
-Romance            → Drama            (lift: 3.8)
-Crime + Drama      → Thriller         (lift: 3.2)
-Action + Adventure → Thriller        (lift: 2.9)
-```
-
-### EDA Insights
-
-- **Rating Distribution:** 52% are 4-5 stars (positive skew)
-- **User Demographics:** 71% male, 25-34 largest age group
-- **Top Genres:** Drama (55%), Comedy (35%), Action (24%)
-- **Highest Rated:** Film-Noir, Documentary (niche appeal)
-
----
-
 ## 🛠️ Tech Stack
 
 | Category | Tools |
@@ -132,30 +91,6 @@ Action + Adventure → Thriller        (lift: 2.9)
 | Visualization | Plotly, Seaborn |
 | Mining | mlxtend (FP-Growth, Apriori) |
 | Development | Jupyter Notebook |
-
----
-
-## 📖 Documentation
-
-- **[movielens_analysis.ipynb](movielens_analysis.ipynb)** - Main analysis notebook with:
-  - Data loading & preprocessing
-  - Exploratory Data Analysis
-  - User-Based vs Movie-Based Apriori comparison
-  - Genre recommendation system
-
----
-
-## 📝 Assignment Requirements
-
-This project fulfills the following course requirements:
-
-- [x] Data preprocessing & cleaning
-- [x] Exploratory Data Analysis (EDA)
-- [x] Data mining algorithm implementation
-- [ ] Collaborative Filtering *(planned)*
-- [ ] Content-Based Filtering *(planned)*
-- [x] Visualization of results
-- [x] Decision making & conclusions
 
 ---
 
@@ -185,4 +120,4 @@ This project is for educational purposes as part of the Data Mining course assig
 
 ---
 
-*Last Updated: March 2026*
+*Last Updated: April 2026*
